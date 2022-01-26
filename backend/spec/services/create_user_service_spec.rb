@@ -14,7 +14,7 @@ RSpec.describe CreateUserService, type: :model do
       expect { CreateUserService.new(username: 'natsandovalt').call }.to_not change(User, :count)
     end
 
-    it 'raise Exceptions::GithubUserNotFound when user does not exists on github' do
+    it 'raise GithubUserNotFound when user does not exists on github' do
       expect { CreateUserService.new(username: 'nonexistentuser').call }.to raise_error(GithubUserNotFoundError)
     end
   end
