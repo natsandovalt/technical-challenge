@@ -4,20 +4,25 @@ require 'rails_helper'
 
 RSpec.describe 'Api::V1::Users', type: :request do
   describe 'GET /index' do
-    it 'gets profile for yknx4' do
-      get api_v1_users_path, params: { username: 'yknx4' }
+    it 'gets profile for natsandovalt' do
+      get api_v1_users_path, params: { username: 'natsandovalt' }
       body = JSON.parse(response.body)
       expect(response).to have_http_status(200)
-      expect(body).to have_key('login')
-      expect(body['login']).to eq('yknx4')
+      expect(body).to have_key('username')
+      expect(body['username']).to eq('natsandovalt')
     end
 
-    xit 'get profile for HeyHomie' do
+    it 'gets profile for HeyHomie' do
       get api_v1_users_path, params: { username: 'HeyHomie' }
       body = JSON.parse(response.body)
       expect(response).to have_http_status(200)
-      expect(body).to have_key('login')
-      expect(body['login']).to eq('HeyHomie')
+      expect(body).to have_key('username')
+      expect(body['username']).to eq('HeyHomie')
+    end
+
+    it 'get bad request status when user does not exist in github' do
+      get api_v1_users_path, params: { username: 'nonexistentuser' }
+      expect(response).to have_http_status(400)
     end
   end
 end
