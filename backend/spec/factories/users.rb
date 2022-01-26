@@ -2,12 +2,10 @@
 
 FactoryBot.define do
   factory :user do
-    login { 'MyString' }
-    id { '' }
-    url { 'MyString' }
-    name { 'MyString' }
-    email { 'MyString' }
-    avatar_url { 'MyString' }
-    repositories { '' }
+    username { 'natsandovalt' }
+    github_id { 1 }
+    avatar_url { 'avatar_url' }
+    name { 'Natalia Sandoval' }
+    url { 'url' }
   end
 end
