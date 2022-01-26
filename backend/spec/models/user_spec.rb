@@ -3,24 +3,30 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it 'is valid with valid attributes' do
-    user = build_user
+  describe 'Validations' do
+    it 'is valid with valid attributes' do
+      user = build_user
 
-    expect(user).to be_valid
+      expect(user).to be_valid
+    end
+
+    it 'is not valid without username' do
+      user = build_user
+      user.username = nil
+
+      expect(user).to_not be_valid
+    end
+
+    it 'is not valid without github_id' do
+      user = build_user
+      user.github_id = nil
+
+      expect(user).to_not be_valid
+    end
   end
 
-  it 'is not valid without username' do
-    user = build_user
-    user.username = nil
-
-    expect(user).to_not be_valid
-  end
-
-  it 'is not valid without github_id' do
-    user = build_user
-    user.github_id = nil
-
-    expect(user).to_not be_valid
+  describe 'Associations' do
+    it { should have_many(:repositories) }
   end
 
   def build_user
