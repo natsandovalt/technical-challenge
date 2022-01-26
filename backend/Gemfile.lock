@@ -242,6 +242,8 @@ GEM
       rubocop (>= 0.53.0)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
+    shoulda-matchers (5.1.0)
+      activesupport (>= 5.2.0)
     solargraph (0.43.0)
       backport (~> 1.2)
       benchmark
@@ -305,6 +307,7 @@ DEPENDENCIES
   rubocop-rails (~> 2.11)
   rubocop-rspec (~> 2.4)
   rubocop-thread_safety (~> 0.4)
+  shoulda-matchers
   solargraph (~> 0.43)
   spring (~> 2.1)
   tzinfo-data
