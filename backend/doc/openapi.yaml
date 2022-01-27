@@ -1,0 +1,263 @@
+---
+openapi: 3.0.3
+info:
+  title: backend
+  version: 1.0.0
+servers: []
+paths:
+  "/api/v1/users/{user_id}/repositories":
+    get:
+      summary: index
+      tags:
+      - Api::V1::Repository
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: natsandovalt
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+        example: nonexistentuser
+      responses:
+        '200':
+          description: gets repositories for natsandovalt
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    github_id:
+                      type: integer
+                    user_id:
+                      type: integer
+                    name:
+                      type: string
+                    full_name:
+                      type: string
+                    private:
+                      type: boolean
+                    html_url:
+                      type: string
+                    description:
+                      type: string
+                    fork:
+                      type: boolean
+                    url:
+                      type: string
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+              example:
+              - id: 1
+                github_id: 91489060
+                user_id: 1
+                name: cloud-manager
+                full_name: natsandovalt/cloud-manager
+                private: false
+                html_url: https://github.com/natsandovalt/cloud-manager
+                description: Android application that allows you to manage multiple
+                  cloud services
+                fork: false
+                url: https://api.github.com/repos/natsandovalt/cloud-manager
+                created_at: '2022-01-26T22:52:56.350Z'
+                updated_at: '2022-01-26T22:52:56.350Z'
+              - id: 2
+                github_id: 154627986
+                user_id: 1
+                name: data-analytics
+                full_name: natsandovalt/data-analytics
+                private: false
+                html_url: https://github.com/natsandovalt/data-analytics
+                description:
+                fork: false
+                url: https://api.github.com/repos/natsandovalt/data-analytics
+                created_at: '2022-01-26T22:52:56.352Z'
+                updated_at: '2022-01-26T22:52:56.352Z'
+              - id: 3
+                github_id: 271090076
+                user_id: 1
+                name: doorkeeper-i18n
+                full_name: natsandovalt/doorkeeper-i18n
+                private: false
+                html_url: https://github.com/natsandovalt/doorkeeper-i18n
+                description: Translation files for Doorkeeper OAuth 2 provider
+                fork: true
+                url: https://api.github.com/repos/natsandovalt/doorkeeper-i18n
+                created_at: '2022-01-26T22:52:56.354Z'
+                updated_at: '2022-01-26T22:52:56.354Z'
+              - id: 4
+                github_id: 32612589
+                user_id: 1
+                name: EjemploGitHubHackMty
+                full_name: natsandovalt/EjemploGitHubHackMty
+                private: false
+                html_url: https://github.com/natsandovalt/EjemploGitHubHackMty
+                description:
+                fork: false
+                url: https://api.github.com/repos/natsandovalt/EjemploGitHubHackMty
+                created_at: '2022-01-26T22:52:56.355Z'
+                updated_at: '2022-01-26T22:52:56.355Z'
+              - id: 5
+                github_id: 93833603
+                user_id: 1
+                name: ejercicio-api
+                full_name: natsandovalt/ejercicio-api
+                private: false
+                html_url: https://github.com/natsandovalt/ejercicio-api
+                description:
+                fork: false
+                url: https://api.github.com/repos/natsandovalt/ejercicio-api
+                created_at: '2022-01-26T22:52:56.356Z'
+                updated_at: '2022-01-26T22:52:56.356Z'
+              - id: 6
+                github_id: 190260176
+                user_id: 1
+                name: ejercicio-pagos
+                full_name: natsandovalt/ejercicio-pagos
+                private: false
+                html_url: https://github.com/natsandovalt/ejercicio-pagos
+                description:
+                fork: false
+                url: https://api.github.com/repos/natsandovalt/ejercicio-pagos
+                created_at: '2022-01-26T22:52:56.357Z'
+                updated_at: '2022-01-26T22:52:56.357Z'
+              - id: 7
+                github_id: 130532469
+                user_id: 1
+                name: Hephaestus
+                full_name: natsandovalt/Hephaestus
+                private: false
+                html_url: https://github.com/natsandovalt/Hephaestus
+                description: Lenguaje de programación para la clase de Diseño de Compiladores
+                fork: true
+                url: https://api.github.com/repos/natsandovalt/Hephaestus
+                created_at: '2022-01-26T22:52:56.358Z'
+                updated_at: '2022-01-26T22:52:56.358Z'
+              - id: 8
+                github_id: 32643206
+                user_id: 1
+                name: Horario
+                full_name: natsandovalt/Horario
+                private: false
+                html_url: https://github.com/natsandovalt/Horario
+                description:
+                fork: false
+                url: https://api.github.com/repos/natsandovalt/Horario
+                created_at: '2022-01-26T22:52:56.360Z'
+                updated_at: '2022-01-26T22:52:56.360Z'
+              - id: 9
+                github_id: 98137219
+                user_id: 1
+                name: raphael
+                full_name: natsandovalt/raphael
+                private: false
+                html_url: https://github.com/natsandovalt/raphael
+                description: JavaScript Vector Library
+                fork: true
+                url: https://api.github.com/repos/natsandovalt/raphael
+                created_at: '2022-01-26T22:52:56.361Z'
+                updated_at: '2022-01-26T22:52:56.361Z'
+              - id: 10
+                github_id: 451282518
+                user_id: 1
+                name: technical-challenge
+                full_name: natsandovalt/technical-challenge
+                private: false
+                html_url: https://github.com/natsandovalt/technical-challenge
+                description:
+                fork: true
+                url: https://api.github.com/repos/natsandovalt/technical-challenge
+                created_at: '2022-01-26T22:52:56.362Z'
+                updated_at: '2022-01-26T22:52:56.362Z'
+        '400':
+          description: get bad request status when user does not exist in github
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  status:
+                    type: integer
+              example:
+                message: 'Could''t find github user: nonexistentuser!'
+                status: 400
+  "/api/v1/users":
+    get:
+      summary: index
+      tags:
+      - Api::V1::User
+      parameters:
+      - name: username
+        in: query
+        schema:
+          type: string
+        example: natsandovalt
+      - name: username
+        in: query
+        schema:
+          type: string
+        example: HeyHomie
+      - name: username
+        in: query
+        schema:
+          type: string
+        example: nonexistentuser
+      responses:
+        '200':
+          description: gets profile for natsandovalt
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  github_id:
+                    type: integer
+                  name:
+                    type: string
+                  username:
+                    type: string
+                  avatar_url:
+                    type: string
+                  url:
+                    type: string
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+              example:
+                id: 2
+                github_id: 10490652
+                name: Natalia Sandoval
+                username: natsandovalt
+                avatar_url: https://avatars.githubusercontent.com/u/10490652?v=4
+                url: https://api.github.com/users/natsandovalt
+                created_at: '2022-01-26T22:52:57.147Z'
+                updated_at: '2022-01-26T22:52:57.147Z'
+        '400':
+          description: get bad request status when user does not exist in github
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  status:
+                    type: integer
+              example:
+                message: 'Could''t find github user: nonexistentuser!'
+                status: 400
