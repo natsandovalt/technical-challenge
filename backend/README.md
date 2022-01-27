@@ -19,3 +19,4 @@
 * Services (job queues, cache servers, search engines, etc.)
   - CreateUser service for creating the requested user
   - CreateRepositories service for creating the repositories for the requested user
+  - Searchkick on repository fields: name, full_name and description using the parameter `query`

@@ -23,6 +23,16 @@ paths:
         schema:
           type: string
         example: nonexistentuser
+      - name: query
+        in: query
+        schema:
+          type: string
+        example: technical-challenge
+      - name: query
+        in: query
+        schema:
+          type: string
+        example: ejercicio
       responses:
         '200':
           description: gets repositories for natsandovalt
@@ -49,6 +59,7 @@ paths:
                       type: string
                     description:
                       type: string
+                      nullable: true
                     fork:
                       type: boolean
                     url:
