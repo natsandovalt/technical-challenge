@@ -6,7 +6,7 @@ module Api
       def index
         user = CreateUserService.new(username: user_params).call
         CreateRepositoriesService.new(username: user_params).call
-        render json: user.repositories
+        render json: repositories(user)
       rescue GithubUserNotFoundError => e
         render json: payload(e.message, 400), status: :bad_request
       end
@@ -17,8 +17,16 @@ module Api
         params.require(:user_id)
       end
 
+      def query_params
+        params.permit(:query)
+      end
+
       def payload(message, status)
         { message: message, status: status }
+      end
+
+      def repositories(user)
+        query_params['query'].present? ? user.repositories.search(query_params['query']) : user.repositories
       end
     end
   end
