@@ -24,5 +24,10 @@ RSpec.describe 'Api::V1::Users', type: :request do
       get api_v1_users_path, params: { username: 'nonexistentuser' }
       expect(response).to have_http_status(400)
     end
+
+    it 'get internal server error status when no param is given' do
+      get api_v1_users_path
+      expect(response).to have_http_status(500)
+    end
   end
 end
