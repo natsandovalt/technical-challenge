@@ -1,6 +1,7 @@
-update_user_information:
-  cron: '0 0 * * *'
-  class: UpdateUserInformationJob
-update_user_repositories:
-  cron: '0 0 * * *'
-  class: UpdateUserRepositoriesJob
+:schedule:  
+  update_user_information_job:
+    cron: '0 0 * * *'
+    class: UpdateUserInformationJob
+  update_user_repositories_job:
+    cron: '0 0 * * *'
+    class: UpdateUserRepositoriesJob
