@@ -2,12 +2,14 @@
 
 class CreateUserService
   include FaradayHelper
+  include LoggerHelper
 
   def initialize(username:)
     @username = username
   end
 
   def call
+    log_info("CreateUserService with username: #{@username}")
     user = connection.get("#{ENV['GITHUB_URL']}/users/#{@username}").body
 
     raise(GithubUserNotFoundError, "Could't find github user: #{@username}!") if user['message'] == 'Not Found'

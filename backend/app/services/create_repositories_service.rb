@@ -2,12 +2,14 @@
 
 class CreateRepositoriesService
   include FaradayHelper
+  include LoggerHelper
 
   def initialize(username:)
     @username = username
   end
 
   def call
+    log_info("CreateRepositoriesService with username: #{@username}")
     user = User.find_by(username: @username)
     repos = connection.get("#{ENV['GITHUB_URL']}/users/#{@username}/repos", { per_page: 100 }).body
 
