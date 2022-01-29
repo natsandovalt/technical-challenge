@@ -3,14 +3,12 @@
 * Ruby version 3.0.1
 
 * System dependencies
-
-* Configuration
+  - Searchkick
+  - Sidekiq-cron
 
 * Database creation
   - `rake db:create` to create the database
   - `rake db:migrate` to create the tables
-
-* Database initialization
 
 * How to run the test suite
   - Simply run `rspec spec` to run all the available tests
@@ -20,3 +18,4 @@
   - CreateUser service for creating the requested user
   - CreateRepositories service for creating the repositories for the requested user
   - Searchkick on repository fields: name, full_name and description using the parameter `query`
+  - Sidekiq Jobs to update the information of each user and repository automatically
